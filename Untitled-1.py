@@ -6,7 +6,8 @@ menu = """
 [q] Sair
 
 """
-                   
+
+
 saldo = 0
 limite = 500
 extrato = ""
@@ -16,7 +17,7 @@ LIMITE_SAQUES = 3
 while True:
     
     opcao = input(menu)
-    
+    #Menu para fazer deposito.
     if opcao == "d":
         valor = float(input("digite o valor do deposito: "))
         
@@ -27,6 +28,7 @@ while True:
         else:
             print ("Sua operacao falhou, o valor informado e invalido")
 
+  # menu para fazer saque
     elif opcao == "s":
 
         valor = float(input("informe valor para saque: "))
@@ -53,14 +55,17 @@ while True:
 
         else:
             print ("Valor invalido, tente novamente:")
-        
+    
+#Menu para retirar o extrato bancario    
     elif opcao == "e":
         print("extrato".center(50,"_"))
         print("Nao foram encontrado movimentacoes." if not extrato else extrato)
         print(f"\nSaldo: R$ {saldo:.2f}")
         print("_".center(50,"_"))
 
+#Quebra de codigo quando a pessoa escolher "sair"
     elif opcao == "q":
         break
     else:
+
         print("operacao invalida, tente novamente")
